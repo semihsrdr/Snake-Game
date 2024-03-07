@@ -53,8 +53,8 @@ class Snake():
         new_body.showturtle()
 
     def is_alive(self):
-        for i in range(1,len(self.bodies)):
-            if self.bodies[i].xcor()==self.bodies[0].xcor() and self.bodies[i].ycor()==self.bodies[0].ycor():
+        for i in self.bodies[:1:-1]:
+            if self.bodies[0].distance(i)<10:
                 print("game over")
                 return False
 
